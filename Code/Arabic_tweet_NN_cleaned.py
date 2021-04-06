@@ -611,6 +611,3 @@ if __name__ == '__main__':
 	# to train a model run buildModel
 	buildModel("<path to data folder goes here>\\Arabic_tweet_NN\\negative_correlation_terrorist_tweets_2021-03-02.txt", "<path to data folder goes here>\\Arabic_tweet_NN\\positive_correlation_terrorist_tweets_2021-03-02.txt")
 
-	# to load and run a previously trained model run fetchAndRunModel
-	#fetchAndRunModel()
-

@@ -7,7 +7,7 @@
 # * A plain text file containing the screen names of the twitter accounts 
 #   from which you wish to download tweets. Screen names should be one per 
 #   line with no other text in the file.
-# * A properly configured Python 3.6 environment with the necessary libraries 
+# * A properly configured Python 3.6 or higher environment with the necessary libraries 
 #   installed
 # * The text file of screen names should be placed into the same directory as 
 #   this script
@@ -35,21 +35,15 @@ from datetime import date #used to handle date objects
 import os
 
 #Twitter API credentials
-consumer_key = "ZAvh6Pq50dSzKse9dYfqRXJDE"
-consumer_secret = "5abZqCTvptUPJ1No1XTMZRLozVVXbiHOn8Jft5fqqE1c0TCglu"
-access_key = "881954500021334016-m0JV8fNhs8eufUmw5OCCZEl9SLEzYiN"
-access_secret = "sjA459tvPN5vxIVfvgP88d81FcYlmbjDEeXof0v47cx9X"
+consumer_key = "your twitter api consumer key"
+consumer_secret = "your twitter api consumer secret"
+access_key = "your twitter api access key"
+access_secret = "your twitter api access secret"
 
 #Create connection to mysql database
-#cnx = pymysql.connect(user='tom', password='heartford',
-#                        host='127.0.0.1',
-#                        database='arab_leader_tweets')
-
-#Create connection to mysql database
-#cnx = pymysql.connect(user='trishel', password='Password1',
-#                        host='131.95.35.249',
-#                        database='quatari_leader_tweets')
-
+#cnx = pymysql.connect(user='your mysql user name', password='your mysql password',
+#                        host='ip address of your database server',
+#                        database='your database to store the tweets')
 
 #function to store the most recent 3240 tweets for a given twitter screen name in files divided by month		
 def get_all_tweets(screen_name, path, filename):
@@ -252,10 +246,7 @@ def file2tweets(path, filename):
 	pass
 		
 def fileRunner(): #(directory)
-    # desktop path
-    #path =  'C:\\Users\\w314322\\source\\repos\\tweetHarvester\\tweetHarvester'
-    # laptop path
-    path = 'C:\\Users\\Tom Rishel\\source\\repos\\tweetHarvester\\tweetHarvester\\twitter_screen_names_by_country_alone\\'
+    path = 'path to the folder that has subfolders with lists of accounts you want to harvest'
     countryFiles = os.listdir(path)
     for country in countryFiles:
         print(str(country[-4:]))
@@ -266,8 +257,4 @@ def fileRunner(): #(directory)
 
 
 if __name__ == '__main__':
-	#pass in the filename containing the list of screen names
-	#file2tweets()
 	fileRunner()
-
-	
